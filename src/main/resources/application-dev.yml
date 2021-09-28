@@ -1,0 +1,11 @@
+baseHostName: localhost
+basePort: 8080
+baseMysqlDatabase: bssystem
+baseRedisDatabase: 0
+showSQL: true
+mySQLUsername: root
+mySQLPassword: 123123
+mySQLPort: 3306
+redisPassword: 123
+openDebug: false
+redisPort: 6379

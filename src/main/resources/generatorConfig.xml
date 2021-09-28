@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!--导入yml属性配置-->
+    <properties resource="application.yml"></properties>
+    <classPathEntry location="F:/mysql-connector-java-8.0.11.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!-- 是否去除自动生成的注释 -->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接URL，用户名、密码 -->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/bbkt?serverTimezone=UTC"
+                userId="root"
+                password="123123">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.bnuz.bbkt.entity" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!-- 生成DAO的包名和位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.bnuz.bbkt.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--<table tableName="t_course" domainObjectName="CourseEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <!--<columnOverride column="introduction" javaType=" java.lang.String" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <!--<table tableName="t_class_attendance" domainObjectName="ClassAttendanceEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <!--<columnOverride column="record" javaType=" java.lang.String" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <!--<table tableName="t_class_course_detail" domainObjectName="ClassCourseDetailEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <!--<columnOverride column="remark" javaType=" java.lang.String" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <!--<table tableName="t_class" domainObjectName="ClassEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+        <!--<table tableName="t_user" domainObjectName="UserEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">-->
+        <!--<columnOverride column="introduction" javaType="java.lang.String" jdbcType="VARCHAR" />-->
+        <!--</table>-->
+        <!--<table tableName="t_admin" domainObjectName="AdminEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        <table tableName="t_user" domainObjectName="UserEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="introduction" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_admin" domainObjectName="AdminEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="description" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_admin_operator_log" domainObjectName="AdminOperatorLogEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_admin_role" domainObjectName="AdminRoleEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_admin_user_role" domainObjectName="AdminUserRoleEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_admin_user_role_permissions" domainObjectName="AdminUserRolePermissionsEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_city" domainObjectName="CityEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_home_news" domainObjectName="HomeNewsEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_home_remark" domainObjectName="HomeRemarkEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_outfit" domainObjectName="OutfitEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_user" domainObjectName="UserEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="introduction" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_admin_user_permissions" domainObjectName="AdminUserPermissions" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="t_class_notice" domainObjectName="ClassNoticeEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" javaType=" java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="picture" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="t_class" domainObjectName="ClassEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="t_class_team" domainObjectName="ClassTeamEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_class_team_member" domainObjectName="ClassTeamMemberEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_class_course_summary" domainObjectName="ClassTeamMemberSummaryEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_class_course_notice" domainObjectName="ClassCourseNoticeEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_class_course_detail" domainObjectName="ClassCourseDetailEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="remark" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_class_plan" domainObjectName="ClassPlanEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_class_attendance" domainObjectName="ClassAttendanceEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="record" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_class_discussion_praise" domainObjectName="ClassDiscussionPraiseEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_class_discussion" domainObjectName="ClassDiscussionEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" javaType=" java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="teacher_content" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_class_discussion_assess" domainObjectName="ClassDiscussionAssessEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="content" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_resource_courseware" domainObjectName="ResourceCoursewarePraiseEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_course" domainObjectName="CourseEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="introduction" javaType=" java.lang.String" jdbcType="VARCHAR" />
+        </table>
+
+        <table tableName="t_resource_publishment" domainObjectName="ResourcePublishmentEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_resource_folder" domainObjectName="ResourceFolderEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="t_lesson" domainObjectName="LessonEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <columnOverride column="detail" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="analysis" javaType="java.lang.String" jdbcType="VARCHAR" />
+            <columnOverride column="lesson_options" javaType="java.lang.String" jdbcType="VARCHAR" />
+        </table>
+        <table tableName="t_lesson_answer_record" domainObjectName="LessonAnswerRecordEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_lesson_option_detail" domainObjectName="LessonOptionDetailEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_lesson_paper_detail" domainObjectName="LessonPaperDetailEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_lesson_paper" domainObjectName="LessonPaperEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="t_class_lesson" domainObjectName="ClassLessonEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        -->
+        <!--<table tableName="t_lesson_paper_record" domainObjectName="LessonPaperRecordEntity" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+        <table tableName="t_class_teaching" domainObjectName="ClassTeachingEntity" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <columnOverride column="remark" javaType="java.lang.String" jdbcType="VARCHAR"/>
+        </table>
+    </context>
+</generatorConfiguration>
